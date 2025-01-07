@@ -1,5 +1,7 @@
 const gameBoard = document.getElementById('game-board');
 const resetButton = document.getElementById('reset-btn');
+const startButton = document.getElementById('start-btn');
+const introSection = document.getElementById('intro');
 
 const symbols = ['🍎', '🍌', '🍒', '🍇', '🍉', '🍊', '🍍', '🍓'];
 let cards = [];
@@ -71,7 +73,18 @@ function checkMatch() {
 }
 
 // ゲームリセット
-resetButton.addEventListener('click', initGame);
+resetButton.addEventListener('click', () => {
+    matchedCards = 0;
+    flippedCards = [];
+    initGame();
+    gameBoard.style.display = 'block';
+    resetButton.style.display = 'none';
+});
 
-// ゲーム開始
-initGame();
+// スタートボタンを押したらゲームを開始
+startButton.addEventListener('click', () => {
+    introSection.style.display = 'none';
+    gameBoard.style.display = 'grid';
+    resetButton.style.display = 'inline-block';
+    initGame();
+});
