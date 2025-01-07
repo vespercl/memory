@@ -13,6 +13,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
+        console.log('Service Worker: Caching Files');
         return cache.addAll(urlsToCache);
       })
   );
