@@ -3,9 +3,9 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/styles.css',
-  '/script.js',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png',
+  '/app.js',
+  '/apple-icon.svg',
+  '/apple-icon.svg',
 ];
 
 // サービスワーカーインストール時にリソースをキャッシュ
